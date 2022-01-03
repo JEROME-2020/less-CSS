@@ -1,0 +1,128 @@
+
+/**Variable **/
+@header_bg: rgb(80, 211, 20);
+@MxWwidth_h: 1280px;
+@header_hieght: 55px;
+@Zero: 0;
+@Global_font: 'Calibri';
+@banner_image: url('banner.jpg');
+@column: 33.33%; 
+
+*{
+    margin: @Zero;
+    padding: @Zero;
+}
+/**Heade**/
+.header_sec{
+    background: @header_bg;
+    max-width: @MxWwidth_h;
+    height: @header_hieght;
+    margin: auto;
+    display: flex;
+    margin-bottom: -100px;
+    padding: 0px 20px 0px 20px;
+
+    .box:nth-child(1){
+        width: @column;
+        height: 100%;
+        display: flex;
+        align-items: center;
+         
+        a{
+             font-size:  33px;
+             color: #fff;
+             z-index: 1;
+             text-decoration: none;
+             font-family: @Global_font;
+        }
+    }
+    .box:nth-child(2){
+        width: @column;
+        height: 100%;
+    }
+    .box:nth-child(3){
+        width: @column;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+        list-style: none;
+        z-index: 1;
+
+        a{
+            font-size: 20px;
+            text-decoration: none;
+            color: rgb(235, 213, 213);
+            font-family: @Global_font;
+            letter-spacing: 2px;
+            font-weight: 500px;
+            &:hover{
+                color: rgb(236, 238, 127);
+            }
+            &::after{
+                content: "";
+                background: rgb(236, 238, 127);
+                display: block;
+                width: 0%;
+                height: 2px;
+                transition: 100ms ease;
+            }
+            &:hover::after{
+              width: 100%;
+              
+            }
+        }
+    }
+}
+/**Banner section**/
+.banner{
+    background-image:  @banner_image;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 108vh;
+    
+    .overlay{
+        background: rgba(25, 25, 27, 0.747);
+        width: 100%;
+        height: 100%;
+
+        .container{
+            height: 100%;
+            margin: auto;
+            max-width: @MxWwidth_h;
+            display: flex;
+
+            .row:nth-child(1){
+            
+                width: 50%;
+                height: 100%;
+                h1{
+                    margin-top: 30%;
+                    font-size: 63px;
+                    color: rgb(236, 238, 127);
+                    width: 350px;
+                    font-family: @Global_font;
+                }
+                p{
+                    font-size: 25px;
+                    width: 400px;
+                    font-family: @Global_font; 
+                    line-height: 1.2em;
+                    color: #fff;
+                }
+            }
+            .row:nth-child(2){
+                width: 50%;
+                height: 100%;
+        
+            }
+        }
+    }
+}
